@@ -1,0 +1,22 @@
+{
+  "name": "mathtokenizer",
+  "version": "1.0.0",
+  "description": "Math expression tokenizer",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilyastouyle/mathTokenizer.git"
+  },
+  "keywords": [
+    "tokenizer"
+  ],
+  "author": "Ilyas Touyle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ilyastouyle/mathTokenizer/issues"
+  },
+  "homepage": "https://github.com/ilyastouyle/mathTokenizer#readme"
+}
