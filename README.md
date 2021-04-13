@@ -1,2 +1,2 @@
 # mathTokenizer
-##Math expression tokenizer for later purposes (validation, evaluation)
+## Math expression tokenizer for later purposes (validation, evaluation)
