@@ -43,6 +43,7 @@ let Tokenizer = {
 					case '-':
 					case '*':
 					case '/':
+					case '^':
 						if(buffer.length > 0){
 							if(isNaN(buffer.join(''))){
 								if(buffer[buffer.length - 1] == '.'){
