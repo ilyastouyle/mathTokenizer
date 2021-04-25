@@ -24,10 +24,16 @@ let Tokenizer = {
 									else{
 										output.push(new this.token("number", buffer.join('')));	
 									}
-									output.push(new this.token("number", buffer.join('')));
 								}
 								else{
 									output.push(new this.token(((buffer.length = 1) ? "variable" : "function"), buffer.join('')));
+								}
+								buffer = [];
+							}
+							else{
+								if(buffer.join('').includes('.')){
+									output.push(new this.token("number", buffer.join('')));
+									buffer = [];	
 								}
 							}
 							buffer.push(expression[i]);
@@ -59,10 +65,9 @@ let Tokenizer = {
 								output.push(new this.token("separator", buffer.join('')));
 							}
 							else{
-								if(buffer.length = 1){
+								if(buffer.length == 1){
 									output.push(new this.token("variable", buffer.join('')));
 									output.push(new this.token("operator", '*'));
-									output.push(new this.token("lparenthesis", expression[i]));
 								}
 								else{
 									output.push(new this.token("function", buffer.join('')));									
@@ -72,7 +77,6 @@ let Tokenizer = {
 						else{
 							output.push(new this.token("number", buffer.join('')));
 							output.push(new this.token("operator", '*'));
-							output.push(new this.token("lparenthesis", expression[i]));
 						}
 						output.push(new this.token("lparenthesis", expression[i]));
 						buffer = [];
@@ -99,11 +103,13 @@ let Tokenizer = {
 							if(isNaN(buffer.join(''))){
 								if(buffer[buffer.length - 1] == '.'){
 									output.push(new this.token("separator", buffer.join('')));
+									buffer = [];
 								}
 							}
 							else{
 								output.push(new this.token("number", buffer.join('')));
 								output.push(new this.token("operator", '*'));
+								buffer = [];
 							}
 						}
 						buffer.push(expression[i]);
@@ -111,13 +117,15 @@ let Tokenizer = {
 				}
 			}
 			else{
-				if(isNaN(buffer[buffer.length - 1]) && buffer[buffer.length - 1] != '.'){
+				if(buffer.length > 0 && isNaN(buffer[buffer.length - 1]) && buffer[buffer.length - 1] != '.'){
 					output.push(new this.token(((buffer.length = 1) ? "variable" : "function"), buffer.join('')));
 					output.push(new this.token("operator", '*'));
+					buffer = [];
 				}
 				buffer.push(expression[i]);
 			}
 		}
+		return output;
 	}
 }
 module.exports = Tokenizer;
