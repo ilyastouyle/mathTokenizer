@@ -75,13 +75,49 @@ let Tokenizer = {
 							output.push(new this.token("lparenthesis", expression[i]));
 						}
 						output.push(new this.token("lparenthesis", expression[i]));
+						buffer = [];
+						break;
+					case ')':
+						if(buffer.length > 0){
+							if(isNaN(buffer.join(''))){
+								if(buffer[buffer.length - 1] == '.'){
+									output.push(new this.token("separator", buffer.join('')));
+								}
+								else{
+									output.push(new this.token(((buffer.length = 1) ? "variable" : "function"), buffer.join('')));									
+								}
+							}
+							else{
+								output.push(new this.token("number", buffer.join('')));	
+							}
+						}
+						output.push(new this.token("rparenthesis", expression[i]));
+						buffer = [];
+						break;
+					default:
+						if(buffer.length > 0){
+							if(isNaN(buffer.join(''))){
+								if(buffer[buffer.length - 1] == '.'){
+									output.push(new this.token("separator", buffer.join('')));
+								}
+							}
+							else{
+								output.push(new this.token("number", buffer.join('')));
+								output.push(new this.token("operator", '*'));
+							}
+						}
+						buffer.push(expression[i]);
 						break;
 				}
 			}
 			else{
-
+				if(isNaN(buffer[buffer.length - 1]) && buffer[buffer.length - 1] != '.'){
+					output.push(new this.token(((buffer.length = 1) ? "variable" : "function"), buffer.join('')));
+					output.push(new this.token("operator", '*'));
+				}
+				buffer.push(expression[i]);
 			}
 		}
 	}
 }
-export default Tokenizer;
+module.exports = Tokenizer;
