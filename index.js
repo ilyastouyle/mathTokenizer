@@ -126,6 +126,24 @@ let Tokenizer = {
 				buffer.push(expression[i]);
 			}
 		}
+		if(buffer.length > 0){
+			if(isNaN(buffer.join(''))){
+				if(buffer[buffer.length - 1] == '.'){
+					output.push(new this.token("separator", buffer.join('')));
+				}
+				else{
+					if(buffer.length == 1){
+						output.push(new this.token("variable", buffer.join('')));
+					}
+					else{
+						output.push(new this.token("function", buffer.join('')));									
+					}
+				}
+			}
+			else{
+				output.push(new this.token("number", buffer.join('')));
+			}
+		}
 		return output;
 	}
 }
