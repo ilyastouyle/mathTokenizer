@@ -11,7 +11,7 @@
 		[
 		  token { type: 'function', value: 'sin' },
 		  token { type: 'lparenthesis', value: '(' },
-		  token { type: 'operator', value: '-' },
+		  token { type: 'unary_operator', value: '-' },
 		  token { type: 'number', value: '3' },
 		  token { type: 'operator', value: '*' },
 		  token { type: 'variable', value: 'x' },
