@@ -71,8 +71,13 @@ let Tokenizer = {
 						break;
 					case '+':
 					case '-':
-						if(buffer.length == 0 && ((output.length == 0) || (output[output.length - 1].type == "lparenthesis")) ){
-							output.push(new this.token("unary_operator", expression[i]));
+						if(buffer.length == 0){
+							if(((output.length == 0) || (output[output.length - 1].type == "lparenthesis"))){
+								output.push(new this.token("unary_operator", expression[i]));								
+							}
+							else{
+								output.push(new this.token("operator", expression[i]));
+							}
 						}
 						else{
 							if(isNaN(buffer.join(''))){
