@@ -1,6 +1,6 @@
 {
   "name": "mathtokenizer",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Math expression tokenizer",
   "main": "index.js",
   "scripts": {
