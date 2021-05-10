@@ -5,9 +5,10 @@ let Tokenizer = {
 			this.value = value;
 		}
 	},
-	tokenize: function (expression){
+	tokenize: function (expr){
 		let buffer = [];
 		let output = [];
+		let expression = expr.replace(/\s/g,'');
 		for(let i = 0; i < expression.length; i++){
 			if(isNaN(expression[i])){
 				switch(expression[i]){
