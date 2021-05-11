@@ -188,7 +188,6 @@ let Tokenizer = {
 				else{
 					if(buffer.length == 1){
 						output.push(new this.token("variable", buffer.join('')));
-						output.push(new this.token("operator", '*'));
 					}
 					else{
 						output.push(new this.token("function", buffer.join('')));									

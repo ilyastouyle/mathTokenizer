@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/ilyastouyle/mathTokenizer/issues"
   },
-  "homepage": "https://github.com/ilyastouyle/mathTokenizer#readme"
+  "homepage": "https://github.com/ilyastouyle/mathTokenizer#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
 }
