@@ -15,12 +15,12 @@
 
 	tokenize(__expr__, __index(optional)__) 
 
-	| 	Index 	| 			  Delimiter 			|
-	| 	:---:	| 				:---:				|
-	| 	0		| 				  (					|
-	| 	1		|				  {					|
-	|	2		|				  [					|
-	|	3		|	Default	no particular delimiter |
+| 	Index 	| 			  Delimiter 			|
+| 	:---:	| 				:---:				|
+| 	0		| 				  (					|
+| 	1		|				  {					|
+|	2		|				  [					|
+|	3		|	Default	no particular delimiter |
 
 	In the new version (^1.1.0), it's no longer lparenthesis or rparenthesis, it's rather
 	ldelimiter, rdelimiter.
