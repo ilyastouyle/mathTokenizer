@@ -13,7 +13,7 @@
 	particular delimiter and recognizes as function any alphanumerical
 	expression **right before** the opening delimiter. 
 
-	tokenize(__expr__, __index(optional)__) 
+> tokenize(__expr__, __index(optional)__) 
 
 | 	Index 	| 			  Delimiter 			|
 | 	:---:	| 				:---:				|
