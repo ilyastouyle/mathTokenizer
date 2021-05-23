@@ -19,10 +19,10 @@
 | 	0		| 				  (					|
 | 	1		|				  {					|
 |	2		|				  [					|
-|	3		|	Default	no particular delimiter |
+|	3		|	Default, particular delimiter 	|
 
 
-**In the new version (^1.1.0), it's no longer lparenthesis or rparenthesis, it's rather ldelimiter, rdelimiter.**
+**In the new version (^1.1.0), it's no longer `lparenthesis` or `rparenthesis`, it's rather `ldelimiter` and `rdelimiter`.**
 
 ## Examples:
 
