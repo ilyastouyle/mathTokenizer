@@ -1,10 +1,10 @@
-# Math Tokenizer
+# Math expression tokenizer for expression validation
 
-## Install
+## Install:
 
 	npm install mathtokenizer --save
 
-## Math expression tokenizer for expression validation
+## Library: 
 
 `token`: `{type, value}` object  
 
@@ -23,6 +23,8 @@
 
 
 **In the new version (^1.1.0), it's no longer lparenthesis or rparenthesis, it's rather ldelimiter, rdelimiter.**
+
+## Examples:
 
 ### Example1:
 ```js
