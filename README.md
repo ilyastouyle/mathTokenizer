@@ -6,7 +6,8 @@
 
 ## Math expression tokenizer for expression validation
 
-`token`: `{type, value}` object 
+`token`: `{type, value}` object  
+
 `tokenize`: function that takes in `string` math expression and returns `array` with tokens, also takes in an optional integer `[0-2]` variable for choosing only a delimiter as a function delimiter. The default is 3, which doesn't force any particular delimiter and recognizes as function any alphanumerical expression **right before** the opening delimiter.  
 
 ```js
